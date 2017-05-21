@@ -1,0 +1,35 @@
+#!/bin/bash
+run_env() {
+  if has "anyenv"; then
+    echo "$(tput setaf 2)Already installed anyenv ✔︎$(tput sgr0)"
+  else
+    echo "Installing anyenv..."
+    git clone https://github.com/riywo/anyenv ~/.anyenv
+  fi
+
+  if has "anyenv"; then
+    echo "Installing rbenv..."
+    anyenv install rbenv
+
+    # Install latest ruby
+    echo "Install latest ruby..."
+    latest=`rbenv install -l | grep -v - | tail -n 1 | tr -d ' '`
+    if ! rbenv versions | grep -e "${latest}\( \|$\)"; then
+      rbenv install ${latest}
+      rbenv global ${latest}
+    fi
+  fi
+
+  if has "anyenv"; then
+    echo "Installing ndenv..."
+    anyenv install ndenv
+
+    # Install latest node
+    echo "Install latest node..."
+    latest=`ndenv install -l | grep -v - | tail -n 1 | tr -d ' '`
+    if ! ndenv versions | grep -e "${latest}\( \|$\)"; then
+      ndenv install ${latest}
+      ndenv global ${latest}
+    fi
+  fi
+}
