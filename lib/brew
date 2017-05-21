@@ -55,12 +55,16 @@ run_brew() {
 
     local -a missing_formulae=()
     local -a desired_formulae=(
+      'iterm2'
       'alfred'
       'dropbox'
       'google-chrome'
       'slack'
       'vagrant'
       'virtualbox'
+      'visual-studio-code'
+      'atom'
+      'docker'
     )
     # cask
     local installed=`brew cask list`
