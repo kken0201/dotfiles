@@ -1,0 +1,67 @@
+"*":
+  "atom-beautify":
+    _analyticsUserId: "e8f27fe0-9f5d-474f-bd5f-05bdd59421ac"
+    general:
+      _analyticsUserId: "6a2f9d84-9618-4760-84e2-f5b8fa12576b"
+  "atom-material-ui":
+    depth: true
+    fonts: {}
+    tabs:
+      compactTabs: true
+    treeView:
+      compactList: true
+    ui: {}
+  core:
+    disabledPackages: [
+      "wrap-guide"
+    ]
+    themes: [
+      "atom-dark-ui"
+      "atom-dark-syntax"
+    ]
+  editor:
+    autoIndentOnPaste: false
+    fontFamily: "Source Han Code JP"
+    fontSize: 13
+    invisibles: {}
+    showIndentGuide: true
+    useShadowDOM: false
+  "exception-reporting":
+    userId: "87ba6efa-30c3-6452-94a6-5eedc0bb0c77"
+  "git-diff":
+    showIconsInEditorGutter: true
+  "japanese-wrap":
+    characterWidth: {}
+  "language-babel":
+    taggedTemplateGrammar: [
+      "\"(?<=<style jsx>{)|(?<=<style jsx global>{)\":source.css.styled"
+    ]
+  linter: {}
+  "linter-eslint":
+    globalNodePath: "/usr/local"
+  "linter-rubocop":
+    command: "/Users/KentaKatoh/.rbenv/versions/2.3.1/bin/rubocop"
+  "linter-ui-default":
+    showPanel: true
+  "markdown-preview":
+    useGitHubStyle: true
+  minimap:
+    absoluteMode: true
+    plugins:
+      "git-diff": true
+      "git-diffDecorationsZIndex": 0
+  react: {}
+  "save-session":
+    dataSaveFolder: "/Users/KentaKatoh/.atom/packages/save-session/projects"
+    fullScreen: false
+    projects: [
+      "/Users/KentaKatoh/works/eeny-front"
+    ]
+    windowHeight: 877
+    windowWidth: 1435
+    windowX: 4
+    windowY: 23
+  "tree-view":
+    hideVcsIgnoredFiles: false
+  welcome:
+    showOnStartup: false
