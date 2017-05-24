@@ -71,8 +71,6 @@ path=(
    $path
 )
 
-
-
 # -------------------------------------
 # ブランチを右プロンプトに表示
 # -------------------------------------
@@ -111,7 +109,6 @@ setopt prompt_subst
 
 RPROMPT='[`rprompt-git-current-branch`%~]'
 
-
 # -------------------------------------
 # プロンプトに表示
 # -------------------------------------
@@ -120,7 +117,6 @@ PROMPT="%{${fg[green]}%}[%n@%m]%{${reset_color}%} %~%# "
 PROMPT="%{${fg[green]}%}[%n@%m]%{${reset_color}%}%#"
 PROMPT="%n@%m %# "
 PROMPT="%n@%m %{${fg[green]}%}%#%{${reset_color}%} "
-
 
 # -------------------------------------
 # エイリアス
@@ -181,10 +177,17 @@ alias dbg="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --remo
 # 新しいブログ記事を作成し該当のMarkdownをAtomで開く
 alias mydays="hugo new days/$(date +%Y%m%d).md --editor='atom'"
 
+# homebrew
 export PATH=/usr/local/bin:$PATH
 
+# anyenv
 export PATH="$HOME/.anyenv/bin:$PATH"
 eval "$(anyenv init -)"
+for D in `ls $HOME/.anyenv/envs`
+do
+export PATH="$HOME/.anyenv/envs/$D/shims:$PATH"
+done
 
+# yarn
 export PATH="$PATH:$HOME/.yarn/bin"
 export PATH="$PATH:`yarn global bin`"
