@@ -123,7 +123,7 @@ PROMPT="%n@%m %{${fg[green]}%}%#%{${reset_color}%} "
 # -------------------------------------
 
 # -n 行数表示, -I バイナリファイル無視, svn関係のファイルを無視
-alias grep="grep --color -n -I --exclude='*.svn-*' --exclude='entries' --exclude='*/cache/*'"
+alias grep="grep --color -I --exclude='*.svn-*' --exclude='entries' --exclude='*/cache/*'"
 
 # ls
 alias ls="ls -G" # color for darwin
@@ -175,7 +175,7 @@ alias clean-branch="git branch --merged | grep -v '*' | xargs -I % git branch -d
 alias dbg="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --remote-debugging-port=9222"
 
 # 新しいブログ記事を作成し該当のMarkdownをAtomで開く
-alias mydays="hugo new days/$(date +%Y%m%d).md --editor='atom'"
+alias mydays="hugo new days/$(date +%Y%m%d).md --editor='code'"
 
 # homebrew
 export PATH=/usr/local/bin:$PATH
