@@ -2,6 +2,7 @@
   path = ~/.gitconfig.local
 
 [core]
+	excludesfile = ~/.gitignore_global
 	editor = code --wait
 
 [push]
