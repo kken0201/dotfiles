@@ -1,0 +1,80 @@
+[include]
+  path = ~/.gitconfig.local
+
+[core]
+	editor = code --wait
+
+[push]
+	default = current
+
+[diff]
+  tool = default-difftool
+
+[difftool "default-difftool"]
+  cmd = code --wait --diff $LOCAL $REMOTE
+
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+
+[color]
+  status = auto
+  diff = auto
+  branch = auto
+  interactive = auto
+  grep = auto
+
+[init]
+	templatedir = ~/.config/git/template
+
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+
+[alias]
+	push-f = push --force-with-lease
+	a = add
+	b = branch
+	c = commit
+	cm = commit --message
+	ci = commit --interactive
+	ca = commit --amend
+	d = diff
+	f = fetch
+	g = grep
+	l = log
+	m = merge
+	co = checkout
+  cb  = checkout -b
+  cm  = checkout master
+  cd  = checkout develop
+	p = pull
+	ps = push 
+	r = remote
+	s = status
+	w = whatchanged
+	co = checkout
+	cp = cherry-pick
+	rb = rebase
+	rbi = rebase --interactive @{upstream}
+  rbi1 = rebase -i HEAD^
+  rbi2 = rebase -i HEAD^^
+  rbi3 = rebase -i HEAD^^^
+  rbi4 = rebase -i HEAD^^^^
+  rbi5 = rebase -i HEAD^^^^^
+	publish = !"git push --set-upstream origin $(git branch-name)"
+  unpublish = !"git push origin :$(git branch-name)"
+	undo-commit = reset --soft HEAD~1
+	uncommit = reset --soft HEAD~1
+	undo-commit-hard = reset --hard HEAD~1
+	save = stash save
+  pop = stash pop
+  apply = stash apply	
+	snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
+	wip = !"git add --all; git ls-files --deleted -z | xargs -0 git rm; git commit --message=wip"
+  unwip = !"git log -n 1 | grep -q -c wip && git reset HEAD~1"
