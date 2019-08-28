@@ -137,6 +137,12 @@ alias tree="tree -NC" # N: 文字化け対策, C:色をつける
 # emacsをCUIで開く
 alias e="emacs -nw"
 
+# hubでプルリクを作成
+alias mkpr="hub -c core.commentChar='%' pull-request"
+
+# https://github.com/motemen/git-browse-remote
+alias oppr="git browse-remote --pr"
+
 # -------------------------------------
 # キーバインド
 # -------------------------------------
