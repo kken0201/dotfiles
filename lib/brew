@@ -57,13 +57,9 @@ run_brew() {
     local -a desired_formulae=(
       'iterm2'
       'alfred'
-      'dropbox'
       'google-chrome'
       'slack'
-      'vagrant'
-      'virtualbox'
       'visual-studio-code'
-      'atom'
       'docker'
     )
     # cask
