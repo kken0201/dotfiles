@@ -6,12 +6,6 @@
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
-# エディタ
-export EDITOR=/usr/local/bin/vim
-
-# ページャ
-export PAGER=/usr/local/bin/vimpager
-export MANPAGER=/usr/local/bin/vimpager
 
 # -------------------------------------
 # zshのオプション
@@ -122,6 +116,9 @@ PROMPT="%n@%m %{${fg[green]}%}%#%{${reset_color}%} "
 # エイリアス
 # -------------------------------------
 
+# `git`でhubを使えるように
+eval "$(hub alias -s)"
+
 # -I バイナリファイル無視, svn関係のファイルを無視
 alias grep="grep --color -I --exclude='*.svn-*' --exclude='entries' --exclude='*/cache/*'"
 
@@ -197,3 +194,6 @@ done
 # yarn
 export PATH="$PATH:$HOME/.yarn/bin"
 export PATH="$PATH:`yarn global bin`"
+
+# BASE
+export PATH="$PATH:$HOME/src/github.com/baseinc/basedev-docker/bin"
