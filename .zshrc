@@ -11,6 +11,11 @@ export LC_ALL=en_US.UTF-8
 # zshのオプション
 # -------------------------------------
 
+# zsh-completions
+if [ -e /usr/local/share/zsh-completions ]; then
+    fpath=(/usr/local/share/zsh-completions $fpath)
+fi
+
 # 補完を有効にする
 
 autoload -U compinit
